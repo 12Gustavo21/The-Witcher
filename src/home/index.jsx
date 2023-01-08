@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../img/Witcher-Simbol.png";
-import * as S from "./style";
+import * as S from "./style"; 
 
 export default function index() {
     return (
