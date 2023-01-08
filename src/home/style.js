@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import Background from "../img/Background.png"
+
+import Background from "../assets/Background.png";
+import Witcher from "../assets/Witcher.png";
 
 export const Body = styled.body`
     background: url(${Background}) center center no-repeat;
@@ -10,7 +12,8 @@ export const Body = styled.body`
 
 export const Header = styled.header`
     width: 100%;
-    height: 20vh;
+    height: 15vh;
+    position: absolute;
 `;
 
 export const HeaderContainer = styled.section`
@@ -38,10 +41,11 @@ export const Logo = styled.img`
 
 export const ProjetoVermelho = styled.h1`
     font: normal normal normal 1rem/1.5rem Montserrat;
-    letter-spacing: .0375rem;
+    letter-spacing: 0.0375rem;
     color: #ffffff;
     text-transform: uppercase;
     font-weight: 300;
+    user-select: none;
 `;
 
 export const HeaderBoxDois = styled.section`
@@ -62,14 +66,136 @@ export const List = styled.ul`
 
 export const Item = styled.li`
     font: normal normal normal 1rem/1.5rem Montserrat;
-    letter-spacing: .0375rem;
-    color: #ffffff;
+    letter-spacing: 0.0375rem;
     text-transform: uppercase;
     font-weight: 300;
-    transition: 1s ease-in-out;
-    
+    transition: 350ms ease-in-out;
+
+    a {
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        border-bottom: 0.0625rem solid #ffffff;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 250ms ease-in-out;
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
     &:hover {
         cursor: pointer;
         font-weight: bold;
+    }
+`;
+
+export const Main = styled.main`
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+`;
+
+export const MainContainer = styled.section`
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+`;
+
+export const MainBoxUm = styled.section`
+    background: url(${Witcher}) center center no-repeat;
+    background-size: contain;
+    width: 70%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+`;
+
+export const MainBoxDois = styled.section`
+    position: absolute;
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const PrincipalBox = styled.section`
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 1rem;
+`;
+
+export const LogoPrincipal = styled.img`
+    width: 20rem;
+    height: 10rem;
+    object-fit: contain;
+`;
+
+export const Botao = styled.button`
+    width: 15rem;
+    height: 2.8rem;
+    border: none;
+    border-radius: .5rem;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: bold;
+    background: linear-gradient(180deg, rgba(220, 39, 39, 1), rgba(168, 9, 9, 1));
+    cursor: pointer;
+    overflow: hidden;
+    transform: translate(0);
+    transition: 1s ease-in-out;
+
+    &::before {
+        content: "";
+        position: absolute;
+        background: #ffffff;
+        width: 0.5rem;
+        top: 0;
+        left: -2rem;
+        bottom: 0;
+        transform: rotate(-16deg);
+        filter: blur(0.375rem);
+    }
+
+    &:hover::before {
+        left: calc(100% + 2rem);
+        transition: 1s;
+    }
+
+    &:hover {
+        border-radius: 1rem;
+    }
+`;
+
+export const Referencia = styled.section`
+    position: absolute;
+    top: 92%;
+    right: 63%;
+    width: 35%;
+
+    h1,
+    a {
+        font: normal normal 600 0.6375rem/1.1875rem Montserrat;
+        letter-spacing: .0281rem;
+        color: #ffffff;
     }
 `;
