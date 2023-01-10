@@ -145,11 +145,8 @@ export const MainBoxUm = styled.section`
     flex-direction: column;
 
     @media only screen and (max-width: 1240px) {
-        height: 80vh;
-    }
-
-    @media only screen and (max-width: 465px) {
-        height: 70vh;
+        width: 100%;
+        height: 75vh;
     }
 `;
 
@@ -161,6 +158,10 @@ export const MainBoxDois = styled.section`
     justify-content: center;
     align-items: center;
     z-index: 1;
+
+    @media only screen and (max-width: 425px){
+        align-items: flex-end;
+    }
 `;
 
 export const PrincipalBox = styled.section`
@@ -175,7 +176,6 @@ export const PrincipalBox = styled.section`
 
     @media only screen and (max-width: 425px){
         gap: .5rem;
-        align-items: flex-start;
     }
 `;
 
@@ -185,7 +185,7 @@ export const LogoPrincipal = styled.img`
     object-fit: contain;
 
     @media only screen and (max-width: 425px){
-        width: 15rem;
+        width: 17rem;
         height: 10rem;
     }
 `;
